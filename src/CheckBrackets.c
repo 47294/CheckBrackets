@@ -2,9 +2,10 @@
 #define MAX_LENGTH 255
 #include "../includes/lib.h"
 #include <string.h>
+#include <malloc.h>
 bool CheckBrackets(const char* str)
 {
-	char stack[MAX_LENGTH];
+	char* stack = (char*)malloc(strlen(str));
 	int stackSize = 0;
 
 	for(int i = 0; i < strlen(str); ++i)
@@ -39,4 +40,5 @@ bool CheckBrackets(const char* str)
 		}
 	}
 	return stackSize == 0;
+	free();
 }
