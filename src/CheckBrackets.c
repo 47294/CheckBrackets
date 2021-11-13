@@ -5,7 +5,7 @@
 #include <malloc.h>
 bool CheckBrackets(const char* str)
 {
-	char* stack = (char*)malloc(strlen(str));
+	char* stack[MAX_LENGTH];
 	int stackSize = 0;
 
 	for(int i = 0; i < strlen(str); ++i)
@@ -40,5 +40,5 @@ bool CheckBrackets(const char* str)
 		}
 	}
 	return stackSize == 0;
-	free();
+
 }
